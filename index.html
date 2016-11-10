@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Hello, World! - A-Frame">
+<title>Der gute Mensch von Sezuan</title>
+<!-- Production Version, Minified -->
+<script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+<script src="https://aframe.io/releases/0.3.2/aframe-inspector.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+
+    <!--Boden-->
+    <a-entity id="floor" geometry="primitive:cylinder;height:.2;radius:12" material="src:#floorImg;color:#400040;metalness:.2;repeat:50 20;roughness:.1;transparent:false" position="0 -0.09 0"></a-entity>
+
+    <!--Buehnenboden-->
+    <a-entity id="greenBox" geometry="primitive:box;width:11;height:0.5;depth:7" material="color:#804000;metalness:1" position="-0.15 0.26 -3.49"></a-entity>
+
+    <!--Buehnenwand-->
+    <a-box src="pic/brick_bump.jpg" position="-0.16 3 -7.46" width="11" color="#F16745" material="src:url(assets/textures/brick_bump.jpg);color:#F16745" geometry="primitive:box;width:11;height:6"></a-box>
+
+    <!--Stellage-->
+    <a-entity id="shortOrangeBox" mixin="short orange box" position="1.65 1.16 -5.24" material="" geometry="width:2.6;height:0.2;depth:1.4"></a-entity>
+
+    <a-entity id="shortOrangeBox-2" mixin="short orange box" position="1.65 2.15 -5.24" rotation="0 0 0" scale="1 1 1" visible="true" material="" geometry="width:2.6;height:0.2;depth:1.4"></a-entity>
+
+    <a-entity id="shortYellowBox" mixin="short yellow box" position="3.03 1.7 -5.93" material="" geometry="height:2.5;depth:0.2;width:0.2"></a-entity>
+
+    <a-entity id="shortYellowBox-4" mixin="short yellow box" position="3.03 0.45 -4.44" rotation="0 0 0" scale="1 1 1" visible="true" material="" geometry="height:5;depth:0.2;width:0.2"></a-entity>
+
+    <a-entity id="shortYellowBox-2" mixin="short yellow box" position="0.35 0.52 -5.93" rotation="0 0 0" scale="1 1 1" visible="true" material="" geometry="height:5;depth:0.2;width:0.2"></a-entity>
+
+    <a-entity id="shortYellowBox-3" mixin="short yellow box" position="0.35 0.52 -4.55" rotation="0 0 0" scale="1 1 1" visible="true" material="" geometry="height:4.8;depth:0.2;width:0.2"></a-entity>
+
+    <!--Zigarettenschachteln-->
+    <a-entity src="pic/kippen.png" id="redBox" geometry="primitive:box;depth:0.2;height:0.2;width:0.5" material="src:url(pic/kippen.png);color:#F16745" position="1.27 1.31 -4.78">
+        <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+    </a-entity>
+
+    <a-entity src="pic/kippen.png" id="redBox-2" geometry="primitive:box;depth:0.2;height:0.2;width:0.5" material="src:url(pic/kippen.png);color:#F16745" position="2.15 1.31 -4.78" rotation="0 0 0" scale="1 1 1" visible="true">
+        <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+    </a-entity>
+
+    <a-entity src="pic/kippen.png" id="redBox-3" geometry="primitive:box;depth:0.2;height:0.2;width:0.5" material="src:url(pic/kippen.png);color:#F16745" position="2.15 2.33 -5.16" rotation="0 0 0" scale="1 1 1" visible="true">
+        <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+    </a-entity>
+
+    <a-entity src="pic/kippen.png" id="redBox-4" geometry="primitive:box;depth:0.2;height:0.2;width:0.5" material="src:url(pic/kippen.png);color:#F16745" position="1.09 2.33 -5.16" rotation="0 0 0" scale="1 1 1" visible="true">
+        <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+    </a-entity>
+
+    <!--Schrank-->
+    <a-box src="pic/schrank.jpg" id="box" position="-3.26 1.98 -4.79" height="4" color="#FFC65D" material="src:url(pic/schrank.jpg);color:#F16745" geometry="primitive:box;height:4;width:2.5"></a-box>
+
+
+    <!--Beleuchtung-->
+    <a-entity id="pointLight" light="type:point;intensity:3" position="-0.79 7.31 -3.5" rotation="17.188733853924695 0 0" scale="2 2 2"></a-entity>
+
+    <!--Schreiner-->
+    <a-assets>
+
+        <a-assets-items id="schreiner" src="VR/schreiner.dae"></a-assets-items>
+
+    </a-assets>
+
+    <a-entity collada-model="#schreiner" position=" -1.26 0.4 -3.79" rotation="10 180 0" scale="2.05 2.05 2.05"></a-entity>
+
+    <!--Obdachloser-->
+    <a-assets>
+
+        <a-assets-items id="obdachlos" src="VR/obdachlos.dae"></a-assets-items>
+
+    </a-assets>
+
+    <a-entity collada-model="#obdachlos" position=" 0.0 0.4 -4.39" rotation="0 210 0" scale="1.8 1.8 1.8"></a-entity>
+
+    <!--Sen-->
+    <a-assets>
+
+        <a-assets-items id="sen" src="VR/sen.dae"></a-assets-items>
+
+    </a-assets>
+
+    <a-entity collada-model="#sen" position=" -0 0.4 -3.79" rotation="10 180 0" scale="2.05 2.05 2.05"></a-entity>
+
+</a-scene>
+
+
+</a-scene>
+
+
+</a-scene>
+
+</body>
+
+
+</html>
+
+
